@@ -1,27 +1,40 @@
+/*
+ * Classe "Joueur"
+ */
 
 public class Joueur
 {
 	protected int[] sous;
 	
 	/**
-	 * @return the sous
+	 * Getter de "sous"
+	 * Retourne la valeur des sous du joueur
 	 */
-	public int[] getSous() {
+	public int[] getSous() 
+	{
 		return sous;
 	}
 
 	/**
-	 * @param sous the sous to set
+	 * Setter de "sous"
+	 * Défini la valeur des sous du joueur
 	 */
-	public void setSous(int[] sous) {
+	public void setSous(int[] sous) 
+	{
 		this.sous = sous;
 	}
 	
+	/*
+	 * Constructeur de Joueur
+	 */
 	public Joueur(int[] nbSous)
 	{
 		sous = nbSous;
 	}
 	
+	/*
+	 * Surcharge du constructeur de Joueur
+	 */
 	public Joueur(int nbSous1, int nbSous5, int nbSous10, int nbSous25)
 	{
 		sous[0] = nbSous1;
@@ -30,11 +43,17 @@ public class Joueur
 		sous[3] = nbSous25;
 	}
 	
+	/*
+	 * Méthode permettant au joueur de dépenser ses sous
+	 */
 	public void DepenserSous()
 	{
 		
 	}
 	
+	/*
+	 * Méthode permettant au joueur de gagner des sous
+	 */
 	public void GagnerSous()
 	{
 		
@@ -50,6 +69,10 @@ public class Joueur
 				+ "";
 	}
 
+	/*
+	 * Méthode transformant un tableau en chaîne de caractère,
+	 * formalisée pour l'affichage des sous
+	 */
 	public static String arrayToString(Object array, int len, int[] valeurs) 
 	{
 		StringBuffer buffer = new StringBuffer();

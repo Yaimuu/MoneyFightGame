@@ -2,7 +2,9 @@ import java.util.Scanner;
 
 public class Game 
 {
-	/*---------------- Constantes ----------------*/
+	/*
+	 * ---------------- Constantes
+	 * */
 	public final static int JOUEUR = 0;
 	public final static int ORDI = 1;
 	public final static int POT = 2;
@@ -10,7 +12,9 @@ public class Game
 	public static final int[] VALEUR_PIECES = {1,5,10,25};
 	public static final int[] NB_PIECES = {4,3,2,1};
 	
-	/*---------------- Variables ----------------*/
+	/*
+	 * ---------------- Variables
+	 * */
 	public static Scanner scan;
 	public static Joueur joueur;
 	public static Ordinateur ordinateur;
@@ -21,10 +25,16 @@ public class Game
 	public static int choix = 0;
 	public static boolean end = false;
 	
+	/*
+	 * Fonction principale dans laquelle le jeu se déroule
+	 */
 	public static void main(String[] args)
 	{
+		boolean bonChoix = true;
+		
 		setup();
-	    boolean bonChoix = true;
+	    
+	    // Boucle principale  dans laquelle la partie se déroule
 		while(!end)
 		{
 			if(turn == JOUEUR)
@@ -60,6 +70,9 @@ public class Game
 		}
 	}
 	
+	/*
+	 * Fonction générant le menu
+	 */
 	public static void menu()
 	{
 		System.out.println(joueur.toString(VALEUR_PIECES));
@@ -76,9 +89,12 @@ public class Game
 		
 		
 		System.out.println("Entez votre choix : ");
-		choix = scan.nextInt();  // Read user input
+		choix = scan.nextInt(); 
 	}
 	
+	/*
+	 * Procédure innitialisant les joueurs et les pièces 
+	 */
 	public static void setup()
 	{
 		scan = new Scanner(System.in);  // Create a Scanner object
@@ -89,6 +105,9 @@ public class Game
 		pieces[POT] = new int[] {0,0,0,0};
 	}
 	
+	/*
+	 * Procédure gérant le changement de tour
+	 */
 	public static void changerDeTour()
 	{
 		if(turn == JOUEUR)
@@ -101,6 +120,9 @@ public class Game
 		}
 	}
 	
+	/*
+	 * Procédure gérant le tour du joueur
+	 */
 	public static void jeu()
 	{
 		

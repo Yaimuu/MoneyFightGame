@@ -1,6 +1,12 @@
+/*
+ * Classe "Ordinateur" héritant de "Joueur"
+ */
 
 public class Ordinateur extends Joueur 
 {
+	/*
+	 * Constructeur de Joueur
+	 */
 	public Ordinateur(int[] nbSous)
 	{
 		super(nbSous);
