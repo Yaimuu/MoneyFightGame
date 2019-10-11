@@ -30,14 +30,25 @@ public class Joueur
 		sous[3] = nbSous25;
 	}
 	
-	public void DepenserSous()
+	public int DepenserSous(int choix)
 	{
-		
+		if(this.sous[choix-1] == 0){
+			return -1;
+		}else{
+			this.sous[choix-1] -= 1;
+			return this.sous[choix-1];
+		}
 	}
 	
-	public void GagnerSous()
+	public void GagnerSous(int wonSous[])
 	{
-		
+		for(int i=0; i < wonSous.length; i++){
+			switch(){
+				case -1:
+					
+				break;
+			}
+		}
 	}
 	
 	/* (non-Javadoc)
