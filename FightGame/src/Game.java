@@ -2,7 +2,9 @@ import java.util.Scanner;
 
 public class Game 
 {
-	/*---------------- Constantes ----------------*/
+	/*
+	 * ---------------- Constantes
+	 * */
 	public final static int JOUEUR = 0;
 	public final static int ORDI = 1;
 	public final static int POT = 2;
@@ -10,7 +12,9 @@ public class Game
 	public static final int[] VALEUR_PIECES = {1,5,10,25};
 	public static final int[] NB_PIECES = {4,3,2,1};
 	
-	/*---------------- Variables ----------------*/
+	/*
+	 * ---------------- Variables
+	 * */
 	public static Scanner scan;
 	public static Joueur joueur;
 	public static Ordinateur ordinateur;
@@ -21,10 +25,16 @@ public class Game
 	public static int choix = 0;
 	public static boolean end = false;
 	
+	/*
+	 * Fonction principale dans laquelle le jeu se déroule
+	 */
 	public static void main(String[] args)
 	{
+		boolean bonChoix = true;
+		
 		setup();
-	    boolean bonChoix = true;
+	    
+	    // Boucle principale  dans laquelle la partie se déroule
 		while(!end)
 		{
 			if(turn == JOUEUR)
@@ -33,9 +43,9 @@ public class Game
 				do 
 				{
 					bonChoix = true;
-					if(choix >= 1 && choix <= 4)
+					if((choix >= 1 && choix <= 4) && joueur.sous[choix-1] > 0)
 					{
-						jeu();
+						jeu(choix);
 					}
 					else if(choix == 5)
 					{
@@ -53,13 +63,17 @@ public class Game
 			}
 			else
 			{
-				ordinateur.IA();
+				ordinateur.IA(pieces[POT]);
+				
 			}
 			
 			changerDeTour();
 		}
 	}
 	
+	/*
+	 * Fonction générant le menu
+	 */
 	public static void menu()
 	{
 		System.out.println(joueur.toString(VALEUR_PIECES));
@@ -76,9 +90,12 @@ public class Game
 		
 		
 		System.out.println("Entez votre choix : ");
-		choix = scan.nextInt();  // Read user input
+		choix = scan.nextInt(); 
 	}
 	
+	/*
+	 * Procédure innitialisant les joueurs et les pièces 
+	 */
 	public static void setup()
 	{
 		scan = new Scanner(System.in);  // Create a Scanner object
@@ -89,6 +106,9 @@ public class Game
 		pieces[POT] = new int[] {0,0,0,0};
 	}
 	
+	/*
+	 * Procédure gérant le changement de tour
+	 */
 	public static void changerDeTour()
 	{
 		if(turn == JOUEUR)
@@ -101,8 +121,28 @@ public class Game
 		}
 	}
 	
-	public static void jeu()
+	/*
+	 * Procédure gérant le tour du joueur
+	 */
+	public static void jeu(int choix)
 	{
-		
+		int[] sousDepenser = joueur.DepenserSous(choix);
+		pieces[POT][sousDepenser[0]] += 1;
+		int[] tableSousRecu = new int[] {0, 0, 0, 0};
+		int sommeSous = 0;
+		int sousARecevoir = VALEUR_PIECES[sousDepenser[0]] - 1;
+		System.out.println("Sous need : " + sousARecevoir);
+		if(choix-1 > 0) {
+			sousARecevoir = VALEUR_PIECES[choix-1];
+		}
+		for(int i = 0; i <= pieces[POT].length-1; i++) {
+			while(pieces[POT][i] > 0 && sommeSous + (VALEUR_PIECES[i]) < sousARecevoir) {
+				tableSousRecu[i] += 1;
+				sommeSous = sommeSous + (VALEUR_PIECES[i]);
+				pieces[POT][i] -= 1;
+			}
+		}
+		joueur.GagnerSous(tableSousRecu);
+		System.out.println("Pieces a recevoir : " + sommeSous);
 	}
 }
