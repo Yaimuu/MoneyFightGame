@@ -13,15 +13,20 @@ public class Ordinateur extends Joueur
 	}
 	
 	/*
-	 * 
+	 * Algorithme de décision de l'ordinateur
 	 */
 	public int IA(int[] pot)
 	{
 		int choix = 1;
-		// A implémenter
 		
-		
-		
+		for(int i = 0; i < sous.length; i++)
+		{
+			if(sous[i] != 0)
+			{
+				choix = i+1;
+				break;
+			}
+		}
 		
 		return choix;
 	}
