@@ -1,5 +1,7 @@
 /*
  * Classe "Joueur"
+ * Version 1.1 - Yanis
+ * Version 1.2 - Justin
  */
 
 public class Joueur

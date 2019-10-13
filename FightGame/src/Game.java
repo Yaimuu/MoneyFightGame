@@ -5,6 +5,9 @@ import java.util.Scanner;
 
 /*
  * Classe principale du jeu
+ * Version 1.1 - Yanis
+ * Version 1.2 - Justin
+ * Version 1.3 - Yanis
  */
 public class Game 
 {
@@ -22,12 +25,14 @@ public class Game
 	 * ---------------- Variables
 	 * */
 	public static Scanner scan;
+		// Instanciation du joueur, de l'ordinateur et d'un joueur temporaire
 	public static Joueur joueur;
 	public static Ordinateur ordinateur;
 	public static Joueur tmpjoueurs;
 	
 	public static int[][] pieces = {{},{},{}};
 	
+		// Variables gérant le tour, le choix des joueurs et la fin du jeu
 	public static int turn = 0;
 	public static int choix = 0;
 	public static boolean end = false;
@@ -67,7 +72,7 @@ public class Game
 					else if(choix > VALEUR_PIECES.length+1 || choix < 1)
 					{
 						bonChoix = false;
-						System.out.println("Votre choix doit être compris entre 1 et 5 : ");
+						System.out.println("Votre choix doit être compris entre 1 et " + (VALEUR_PIECES.length+1) + " : ");
 						choix = getInput();
 					}
 					else
@@ -82,7 +87,7 @@ public class Game
 			}
 			else
 			{
-				choix = ordinateur.IA(pieces[POT]);
+				choix = ordinateur.IA(pieces[POT], VALEUR_PIECES);
 				if(ordinateur.sous[choix-1] > 0)
 				{
 					jeu(ordinateur, choix);
@@ -117,12 +122,19 @@ public class Game
 			{
 				System.out.println("Vous avez gagné !");
 			}
+			
+			int valeurTotale = 0;
+			for(int i =0; i < pieces[POT].length; i++)
+			{
+				valeurTotale += pieces[POT][i] * VALEUR_PIECES[i];
+			}
+			System.out.println("Le gagnant remporte " + valeurTotale + " sous !");
 		}
 		
 	}
 	
 	/*
-	 * Fonction générant le menu
+	 * Procédure affichant le menu
 	 */
 	public static void menu()
 	{
@@ -141,6 +153,9 @@ public class Game
 		choix = getInput();
 	}
 	
+	/*
+	 * Procédure affichant le score
+	 */
 	public static void score()
 	{
 		System.out.println(joueur.toString(VALEUR_PIECES));
@@ -186,10 +201,15 @@ public class Game
 		int[] tableSousRecu = new int[] {0, 0, 0, 0};
 		int sommeSous = 0;
 		int sousARecevoir = VALEUR_PIECES[sousDepenser[0]] - 1;
-		//System.out.println("Sous need : " + sousARecevoir);
-		if(choix-1 > 0) {
+		
+		if(choix-1 > 0) 
+		{
 			sousARecevoir = VALEUR_PIECES[choix-1];
 		}
+		
+		/*
+		 * Algorithme de gestion des pièces à récupérer
+		 */
 		for(int i = 0; i <= pieces[POT].length-1; i++) 
 		{
 			while(pieces[POT][i] > 0 && sommeSous + (VALEUR_PIECES[i]) < sousARecevoir) 
@@ -200,9 +220,12 @@ public class Game
 			}
 		}
 		joueurOuOrdi.GagnerSous(tableSousRecu);
-		//System.out.println("Pieces a recevoir : " + sommeSous);
+		
 	}
 	
+	/*
+	 * Gestion de l'input
+	 */
 	public static int getInput()
 	{
 		int input = -1;

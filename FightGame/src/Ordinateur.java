@@ -1,5 +1,7 @@
 /*
  * Classe "Ordinateur" héritant de "Joueur"
+ * Version 1.1 - Yanis
+ * Version 1.2 - Justin
  */
 
 public class Ordinateur extends Joueur 
@@ -13,27 +15,36 @@ public class Ordinateur extends Joueur
 	}
 	
 	/*
-	 * Algorithme de décision de l'ordinateur
+	 * Algorithme de décision de l'ordinateur.
+	 * Il regarde d'abord si la valeur cumulée des pièces ayant la valeur la plus basse dans le pot valent la peine d'être gagnées;
+	 * Si le choix est celui par défaut, alors il joue la valeur la plus basse qu'il possède
 	 */
-	public int IA(int[] pot)
+	public int IA(int[] pot, int[] valeurs)
 	{
 		int choix = 1;
+		int somme = 0;
 		
-		/*for(int i = sous.length-1; i >= 0; i--)
+		for(int i = 0; i < pot.length-1; i++)
 		{
-			if(sous[i] != 0)
+			somme += pot[i]*valeurs[i];
+			if(somme >= valeurs[i+1]-(valeurs[i+1]/2+1) && somme <= valeurs[i+1]-1)
 			{
 				choix = i+1;
 				break;
 			}
-		}*/
+		}
+		System.out.println("Choix : " + choix + " - Somme : " + somme);
 		
-		for(int i = 0; i < sous.length; i++)
+		
+		if(choix == 1)
 		{
-			if(sous[i] != 0)
+			for(int i = 0; i < sous.length; i++)
 			{
-				choix = i+1;
-				break;
+				if(sous[i] != 0)
+				{
+					choix = i+1;
+					break;
+				}
 			}
 		}
 		
