@@ -12,7 +12,7 @@ public class Joueur
 	 */
 	public int[] getSous() 
 	{
-		return sous;
+		return this.sous.clone();
 	}
 
 	/**
@@ -29,34 +29,61 @@ public class Joueur
 	 */
 	public Joueur(int[] nbSous)
 	{
-		sous = nbSous;
+		this.sous = nbSous;
 	}
 	
-	/*
-	 * Surcharge du constructeur de Joueur
-	 */
-	public Joueur(int nbSous1, int nbSous5, int nbSous10, int nbSous25)
-	{
-		sous[0] = nbSous1;
-		sous[1] = nbSous5;
-		sous[2] = nbSous10;
-		sous[3] = nbSous25;
-	}
 	
 	/*
 	 * Méthode permettant au joueur de dépenser ses sous
 	 */
-	public void DepenserSous()
+	public int[] DepenserSous(int choix)
 	{
+		int[] returnList = new int[]{0,0};
+		int[] sousActuel = this.getSous();
 		
+		if(sousActuel[choix-1] <= 0)
+		{
+			returnList[0] = 0;
+			returnList[1] = -1;
+		}
+		else
+		{
+			sousActuel[choix-1] -= 1;
+			this.setSous(sousActuel);
+			returnList[0] = (choix-1);
+			returnList[1] = sousActuel[choix-1];
+		}
+		
+		return returnList;
 	}
 	
 	/*
 	 * Méthode permettant au joueur de gagner des sous
 	 */
-	public void GagnerSous()
+	public void GagnerSous(int wonSous[])
 	{
-		
+		int[] sousActuel = this.getSous();
+		for(int i=0; i < wonSous.length; i++){
+			sousActuel[i] += wonSous[i];
+		}
+		this.setSous(sousActuel);
+	}
+	
+	/*
+	 * Permet de savoir si sous est vide
+	 */
+	public boolean IsEmpty()
+	{
+		boolean isEmpty = true;
+		int[] sousActuel = this.getSous();
+		for(int piece : sousActuel)
+		{
+			if(piece != 0)
+			{
+				isEmpty = false;
+			}
+		}
+		return isEmpty;
 	}
 	
 	/* (non-Javadoc)
@@ -65,7 +92,7 @@ public class Joueur
 	public String toString(int[] valeurs) 
 	{
 		return "JOUEUR\n"
-				+ (sous != null ? arrayToString(sous, sous.length, valeurs) : null)
+				+ (this.sous != null ? arrayToString(this.sous, this.sous.length, valeurs) : null)
 				+ "";
 	}
 
