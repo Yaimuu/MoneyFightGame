@@ -14,7 +14,7 @@ public class Game
 	public final static int JOUEUR = 0;
 	public final static int ORDI = 1;
 	public final static int POT = 2;
-	
+	// Il est possible d'ajouter des valeurs de pièce, en ajoutant une valeur et un nombre de pièces
 	public static final int[] VALEUR_PIECES = {1,5,10,25};
 	public static final int[] NB_PIECES = {4,3,2,1};
 	
@@ -53,22 +53,28 @@ public class Game
 				do 
 				{
 					bonChoix = true;
-					if((choix >= 1 && choix <= 4) && joueur.sous[choix-1] > 0)
+					if((choix >= 1 && choix <= VALEUR_PIECES.length) && joueur.sous[choix-1] > 0)
 					{
 						jeu(joueur, choix);
 					}
-					else if(choix == 5)
+					else if(choix == VALEUR_PIECES.length+1)
 					{
 						score();
 						end = true;
 						abandon = true;
 						System.out.println("Vous venez d'abandonner, l'ordinateur gagne !");
 					}
-					else
+					else if(choix > VALEUR_PIECES.length+1 || choix < 1)
 					{
 						bonChoix = false;
 						System.out.println("Votre choix doit être compris entre 1 et 5 : ");
-						choix = scan.nextInt();
+						choix = getInput();
+					}
+					else
+					{
+						bonChoix = false;
+						System.out.println("Vous n'avez plus de pièces de " + VALEUR_PIECES[choix-1] + " ! Vous devez miser autre chose !");
+						choix = getInput();
 					}
 					
 				} while(!bonChoix);
@@ -124,15 +130,15 @@ public class Game
 		
 		System.out.println("Faites votre choix");
 		System.out.println("   ----------------------------");
-		for(int i=0; i < 4; i++)
+		for(int i=0; i < VALEUR_PIECES.length; i++)
 		{
 			System.out.println("	" + (i+1) + " : piece de " + VALEUR_PIECES[i] + " sous");
 		}
-		System.out.println("	5 : Abandonner la partie");
+		System.out.println("	" + (VALEUR_PIECES.length+1) + " : Abandonner la partie");
 		
 		
-		System.out.println("Entez votre choix : ");
-		choix = scan.nextInt(); 
+		System.out.println("Entrez votre choix : ");
+		choix = getInput();
 	}
 	
 	public static void score()
@@ -152,7 +158,7 @@ public class Game
 		ordinateur = new Ordinateur(NB_PIECES);
 		pieces[JOUEUR] = joueur.getSous();
 		pieces[ORDI] = ordinateur.getSous();
-		pieces[POT] = new int[] {0,0,0,0};
+		pieces[POT] = new int[VALEUR_PIECES.length];
 	}
 	
 	/*
@@ -195,5 +201,20 @@ public class Game
 		}
 		joueurOuOrdi.GagnerSous(tableSousRecu);
 		//System.out.println("Pieces a recevoir : " + sommeSous);
+	}
+	
+	public static int getInput()
+	{
+		int input = -1;
+		try
+		{
+			input = scan.nextInt();
+		}
+		catch (Exception e)
+		{
+			scan.next();
+			System.out.println("Vous devez saisir un entier !");
+		}
+		return input;
 	}
 }
