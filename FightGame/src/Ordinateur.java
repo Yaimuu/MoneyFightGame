@@ -19,6 +19,15 @@ public class Ordinateur extends Joueur
 	{
 		int choix = 1;
 		
+		/*for(int i = sous.length-1; i >= 0; i--)
+		{
+			if(sous[i] != 0)
+			{
+				choix = i+1;
+				break;
+			}
+		}*/
+		
 		for(int i = 0; i < sous.length; i++)
 		{
 			if(sous[i] != 0)

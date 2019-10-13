@@ -38,6 +38,7 @@ public class Game
 	public static void main(String[] args)
 	{
 		boolean bonChoix = true;
+		boolean abandon = false;
 		
 		setup();
 	    
@@ -58,7 +59,9 @@ public class Game
 					}
 					else if(choix == 5)
 					{
+						score();
 						end = true;
+						abandon = true;
 						System.out.println("Vous venez d'abandonner, l'ordinateur gagne !");
 					}
 					else
@@ -85,26 +88,31 @@ public class Game
 				}
 			}
 			
+			changerDeTour();
+			
 			if(tmpjoueurs.IsEmpty())
 			{
 				end = true;
 				break;
 			}
+		}
+		if(!abandon)
+		{
+			score();
 			
-			changerDeTour();
+			/*
+			 *  Gestion du gagnant
+			 */
+			if(turn != JOUEUR)
+			{
+				System.out.println("L'ordinateur gagne !");
+			}
+			else
+			{
+				System.out.println("Vous avez gagné !");
+			}
 		}
 		
-		/*
-		 *  Gestion du gagnant
-		 */
-		if(turn == JOUEUR)
-		{
-			System.out.println("L'ordinateur gagne !");
-		}
-		else
-		{
-			System.out.println("Vous avez gagné !");
-		}
 	}
 	
 	/*
@@ -112,9 +120,7 @@ public class Game
 	 */
 	public static void menu()
 	{
-		System.out.println(joueur.toString(VALEUR_PIECES));
-		System.out.println("POT\n" + Joueur.arrayToString(pieces[POT], pieces[POT].length, VALEUR_PIECES));
-		System.out.println(ordinateur.toString(VALEUR_PIECES));
+		score();
 		
 		System.out.println("Faites votre choix");
 		System.out.println("   ----------------------------");
@@ -127,6 +133,13 @@ public class Game
 		
 		System.out.println("Entez votre choix : ");
 		choix = scan.nextInt(); 
+	}
+	
+	public static void score()
+	{
+		System.out.println(joueur.toString(VALEUR_PIECES));
+		System.out.println("POT\n" + Joueur.arrayToString(pieces[POT], pieces[POT].length, VALEUR_PIECES));
+		System.out.println(ordinateur.toString(VALEUR_PIECES));
 	}
 	
 	/*
@@ -167,7 +180,7 @@ public class Game
 		int[] tableSousRecu = new int[] {0, 0, 0, 0};
 		int sommeSous = 0;
 		int sousARecevoir = VALEUR_PIECES[sousDepenser[0]] - 1;
-		System.out.println("Sous need : " + sousARecevoir);
+		//System.out.println("Sous need : " + sousARecevoir);
 		if(choix-1 > 0) {
 			sousARecevoir = VALEUR_PIECES[choix-1];
 		}
@@ -181,6 +194,6 @@ public class Game
 			}
 		}
 		joueurOuOrdi.GagnerSous(tableSousRecu);
-		System.out.println("Pieces a recevoir : " + sommeSous);
+		//System.out.println("Pieces a recevoir : " + sommeSous);
 	}
 }
