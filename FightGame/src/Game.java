@@ -4,10 +4,10 @@
 import java.util.Scanner;
 
 /*
- * Classe principale du jeu
- * Version 1.1 - Yanis
- * Version 1.2 - Justin
- * Version 1.3 - Yanis
+ * Auteur : Yanis Ouled Moussa, Justin Garcia
+ * Version : 1.4
+ * Fichier : Game.java - Classe principale du jeu, permettant de changer les tours de jeux, et d'alimenter le pot, afin que la partie
+ * se passe correctement
  */
 public class Game 
 {
@@ -17,6 +17,7 @@ public class Game
 	public final static int JOUEUR = 0;
 	public final static int ORDI = 1;
 	public final static int POT = 2;
+	
 	// Il est possible d'ajouter des valeurs de pièce, en ajoutant une valeur et un nombre de pièces
 	public static final int[] VALEUR_PIECES = {1,5,10,25};
 	public static final int[] NB_PIECES = {4,3,2,1};
@@ -142,12 +143,12 @@ public class Game
 		
 		System.out.println("Faites votre choix");
 		System.out.println("   ----------------------------");
+		
 		for(int i=0; i < VALEUR_PIECES.length; i++)
 		{
 			System.out.println("	" + (i+1) + " : piece de " + VALEUR_PIECES[i] + " sous");
 		}
 		System.out.println("	" + (VALEUR_PIECES.length+1) + " : Abandonner la partie");
-		
 		
 		System.out.println("Entrez votre choix : ");
 		choix = getInput();
@@ -208,15 +209,20 @@ public class Game
 		}
 		
 		/*
-		 * Algorithme de gestion des pièces à récupérer
+		 * Algorithme de gestion des pièces à récupérer;
+		 * On boucle sur toutes les entrées du tableau pieces[POT], une fois dans la boucle for, on réalise
+		 * un while qui va faire la somme des pieces à l'index (pieces[POT].length-1)-i (pour aller de
+		 * la plus grande à la moins grande pièce) et quand la somme de la somme des sous à recevoir +
+		 * la valeur de la pièce à cette index est plus grand que le nombre de sous à recevoir, on passe à la
+		 * valeur inférieure
 		 */
 		for(int i = 0; i <= pieces[POT].length-1; i++) 
 		{
-			while(pieces[POT][i] > 0 && sommeSous + (VALEUR_PIECES[i]) < sousARecevoir) 
+			while(pieces[POT][(pieces[POT].length-1)-i] > 0 && sommeSous + (VALEUR_PIECES[(pieces[POT].length-1)-i]) < sousARecevoir) 
 			{
-				tableSousRecu[i] += 1;
-				sommeSous = sommeSous + (VALEUR_PIECES[i]);
-				pieces[POT][i] -= 1;
+				tableSousRecu[(pieces[POT].length-1)-i] += 1;
+				sommeSous = sommeSous + (VALEUR_PIECES[(pieces[POT].length-1)-i]);
+				pieces[POT][(pieces[POT].length-1)-i] -= 1;
 			}
 		}
 		joueurOuOrdi.GagnerSous(tableSousRecu);

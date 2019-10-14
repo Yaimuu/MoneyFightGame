@@ -1,7 +1,8 @@
 /*
- * Classe "Joueur"
- * Version 1.1 - Yanis
- * Version 1.2 - Justin
+ * Auteur : Yanis Ouled Moussa, Justin Garcia
+ * Version : 1.2
+ * Fichier : Joueur.java - Classe joueur(int[] sous), contenant les getters et les setters, les méthodes permettant de dépenser les sous et
+ * gagner des sous, et une méthode pour vérifier si le joueur à encore des pièces
  */
 
 public class Joueur
@@ -65,7 +66,9 @@ public class Joueur
 	public void GagnerSous(int wonSous[])
 	{
 		int[] sousActuel = this.getSous();
-		for(int i=0; i < wonSous.length; i++){
+		
+		for(int i=0; i < wonSous.length; i++)
+		{
 			sousActuel[i] += wonSous[i];
 		}
 		this.setSous(sousActuel);
@@ -78,6 +81,7 @@ public class Joueur
 	{
 		boolean isEmpty = true;
 		int[] sousActuel = this.getSous();
+		
 		for(int piece : sousActuel)
 		{
 			if(piece != 0)
@@ -105,6 +109,7 @@ public class Joueur
 	public static String arrayToString(Object array, int len, int[] valeurs) 
 	{
 		StringBuffer buffer = new StringBuffer();
+		
 		for (int i = 0; i < len; i++) 
 		{
 			if (i > 0)

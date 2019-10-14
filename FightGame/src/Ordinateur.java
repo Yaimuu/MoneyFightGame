@@ -1,7 +1,8 @@
 /*
- * Classe "Ordinateur" héritant de "Joueur"
- * Version 1.1 - Yanis
- * Version 1.2 - Justin
+ * Auteur : Yanis Ouled Moussa, Justin Garcia
+ * Version : 1.2
+ * Fichier : Ordinateur.java - Classe Ordinateur() héritant de la classe joueur, contenant la méthodes IA pour que l'ordinateur joue
+ * après l'action du joueur
  */
 
 public class Ordinateur extends Joueur 
@@ -33,8 +34,6 @@ public class Ordinateur extends Joueur
 				break;
 			}
 		}
-		System.out.println("Choix : " + choix + " - Somme : " + somme);
-		
 		
 		if(choix == 1)
 		{

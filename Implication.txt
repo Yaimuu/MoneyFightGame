@@ -1,0 +1,902 @@
+Justin : 100%
+	- Joueur.GagnerSous(int wonSous[])
+	- Joueur.DepenserSous(int choix)
+	- Joueur.IsEmpty()
+	- jeu(Joueur joueurOuOrdi, int choix)
+	- Test Unitaires
+		- DepenserArgentTest()
+		- GagnerArgentTest()
+		- isEmptyTest()
+Yanis : 100%
+	- menu()
+	- setup()
+	- score()
+	- Ordinateur.IA()
+	- ChangerDeTour()
+	- getInput()
+	- Gestion des tours et des appels en fonction du choix dans le main
+
+
+Test partie :
+	Test 1 :
+			JOUEUR
+			1 sous : O O O O 
+			5 sous : O O O 
+			10 sous : O O 
+			25 sous : O 
+		POT
+			1 sous : 
+			5 sous : 
+			10 sous : 
+			25 sous : 
+		ORDINATEUR
+			1 sous : O O O O 
+			5 sous : O O O 
+			10 sous : O O 
+			25 sous : O 
+		Faites votre choix
+		   ----------------------------
+			1 : piece de 1 sous
+			2 : piece de 5 sous
+			3 : piece de 10 sous
+			4 : piece de 25 sous
+			5 : Abandonner la partie
+		Entrez votre choix : 
+		1
+		JOUEUR
+			1 sous : O O O 
+			5 sous : O O O 
+			10 sous : O O 
+			25 sous : O 
+		POT
+			1 sous : O O 
+			5 sous : 
+			10 sous : 
+			25 sous : 
+		ORDINATEUR
+			1 sous : O O O 
+			5 sous : O O O 
+			10 sous : O O 
+			25 sous : O 
+		Faites votre choix
+		   ----------------------------
+			1 : piece de 1 sous
+			2 : piece de 5 sous
+			3 : piece de 10 sous
+			4 : piece de 25 sous
+			5 : Abandonner la partie
+		Entrez votre choix : 
+		1
+		JOUEUR
+			1 sous : O O 
+			5 sous : O O O 
+			10 sous : O O 
+			25 sous : O 
+		POT
+			1 sous : O O O O 
+			5 sous : 
+			10 sous : 
+			25 sous : 
+		ORDINATEUR
+			1 sous : O O 
+			5 sous : O O O 
+			10 sous : O O 
+			25 sous : O 
+		Faites votre choix
+		   ----------------------------
+			1 : piece de 1 sous
+			2 : piece de 5 sous
+			3 : piece de 10 sous
+			4 : piece de 25 sous
+			5 : Abandonner la partie
+		Entrez votre choix : 
+		2
+		JOUEUR
+			1 sous : O O O O O O 
+			5 sous : O O 
+			10 sous : O O 
+			25 sous : O 
+		POT
+			1 sous : 
+			5 sous : O O 
+			10 sous : 
+			25 sous : 
+		ORDINATEUR
+			1 sous : O O 
+			5 sous : O O 
+			10 sous : O O 
+			25 sous : O 
+		Faites votre choix
+		   ----------------------------
+			1 : piece de 1 sous
+			2 : piece de 5 sous
+			3 : piece de 10 sous
+			4 : piece de 25 sous
+			5 : Abandonner la partie
+		Entrez votre choix : 
+		1
+		JOUEUR
+			1 sous : O O O O O 
+			5 sous : O O 
+			10 sous : O O 
+			25 sous : O 
+		POT
+			1 sous : O O 
+			5 sous : O O 
+			10 sous : 
+			25 sous : 
+		ORDINATEUR
+			1 sous : O 
+			5 sous : O O 
+			10 sous : O O 
+			25 sous : O 
+		Faites votre choix
+		   ----------------------------
+			1 : piece de 1 sous
+			2 : piece de 5 sous
+			3 : piece de 10 sous
+			4 : piece de 25 sous
+			5 : Abandonner la partie
+		Entrez votre choix : 
+		1
+		JOUEUR
+			1 sous : O O O O 
+			5 sous : O O 
+			10 sous : O O 
+			25 sous : O 
+		POT
+			1 sous : O O O O 
+			5 sous : O O 
+			10 sous : 
+			25 sous : 
+		ORDINATEUR
+			1 sous : 
+			5 sous : O O 
+			10 sous : O O 
+			25 sous : O 
+		Faites votre choix
+		   ----------------------------
+			1 : piece de 1 sous
+			2 : piece de 5 sous
+			3 : piece de 10 sous
+			4 : piece de 25 sous
+			5 : Abandonner la partie
+		Entrez votre choix : 
+		2
+		JOUEUR
+			1 sous : O O O O O O O O 
+			5 sous : O 
+			10 sous : O O 
+			25 sous : O 
+		POT
+			1 sous : 
+			5 sous : O O 
+			10 sous : O 
+			25 sous : 
+		ORDINATEUR
+			1 sous : 
+			5 sous : O O O 
+			10 sous : O 
+			25 sous : O 
+		Faites votre choix
+		   ----------------------------
+			1 : piece de 1 sous
+			2 : piece de 5 sous
+			3 : piece de 10 sous
+			4 : piece de 25 sous
+			5 : Abandonner la partie
+		Entrez votre choix : 
+		1
+		JOUEUR
+			1 sous : O O O O O O O 
+			5 sous : O 
+			10 sous : O O 
+			25 sous : O 
+		POT
+			1 sous : 
+			5 sous : O 
+			10 sous : O O 
+			25 sous : 
+		ORDINATEUR
+			1 sous : O 
+			5 sous : O O O O 
+			10 sous : 
+			25 sous : O 
+		Faites votre choix
+		   ----------------------------
+			1 : piece de 1 sous
+			2 : piece de 5 sous
+			3 : piece de 10 sous
+			4 : piece de 25 sous
+			5 : Abandonner la partie
+		Entrez votre choix : 
+		1
+		JOUEUR
+			1 sous : O O O O O O 
+			5 sous : O 
+			10 sous : O O 
+			25 sous : O 
+		POT
+			1 sous : 
+			5 sous : O O 
+			10 sous : O O 
+			25 sous : 
+		ORDINATEUR
+			1 sous : O O 
+			5 sous : O O O 
+			10 sous : 
+			25 sous : O 
+		Faites votre choix
+		   ----------------------------
+			1 : piece de 1 sous
+			2 : piece de 5 sous
+			3 : piece de 10 sous
+			4 : piece de 25 sous
+			5 : Abandonner la partie
+		Entrez votre choix : 
+		1
+		JOUEUR
+			1 sous : O O O O O 
+			5 sous : O 
+			10 sous : O O 
+			25 sous : O 
+		POT
+			1 sous : O O 
+			5 sous : O O 
+			10 sous : O O 
+			25 sous : 
+		ORDINATEUR
+			1 sous : O 
+			5 sous : O O O 
+			10 sous : 
+			25 sous : O 
+		Faites votre choix
+		   ----------------------------
+			1 : piece de 1 sous
+			2 : piece de 5 sous
+			3 : piece de 10 sous
+			4 : piece de 25 sous
+			5 : Abandonner la partie
+		Entrez votre choix : 
+		1
+		JOUEUR
+			1 sous : O O O O 
+			5 sous : O 
+			10 sous : O O 
+			25 sous : O 
+		POT
+			1 sous : O O O O 
+			5 sous : O O 
+			10 sous : O O 
+			25 sous : 
+		ORDINATEUR
+			1 sous : 
+			5 sous : O O O 
+			10 sous : 
+			25 sous : O 
+		Faites votre choix
+		   ----------------------------
+			1 : piece de 1 sous
+			2 : piece de 5 sous
+			3 : piece de 10 sous
+			4 : piece de 25 sous
+			5 : Abandonner la partie
+		Entrez votre choix : 
+		2
+		JOUEUR
+			1 sous : O O O O O O O O 
+			5 sous : 
+			10 sous : O O 
+			25 sous : O 
+		POT
+			1 sous : 
+			5 sous : O O O O 
+			10 sous : O O 
+			25 sous : 
+		ORDINATEUR
+			1 sous : 
+			5 sous : O O 
+			10 sous : 
+			25 sous : O 
+		Faites votre choix
+		   ----------------------------
+			1 : piece de 1 sous
+			2 : piece de 5 sous
+			3 : piece de 10 sous
+			4 : piece de 25 sous
+			5 : Abandonner la partie
+		Entrez votre choix : 
+		1
+		JOUEUR
+			1 sous : O O O O O O O 
+			5 sous : 
+			10 sous : O O 
+			25 sous : O 
+		POT
+			1 sous : 
+			5 sous : O O O O O 
+			10 sous : O O 
+			25 sous : 
+		ORDINATEUR
+			1 sous : O 
+			5 sous : O 
+			10 sous : 
+			25 sous : O 
+		Faites votre choix
+		   ----------------------------
+			1 : piece de 1 sous
+			2 : piece de 5 sous
+			3 : piece de 10 sous
+			4 : piece de 25 sous
+			5 : Abandonner la partie
+		Entrez votre choix : 
+		1
+		JOUEUR
+			1 sous : O O O O O O 
+			5 sous : 
+			10 sous : O O 
+			25 sous : O 
+		POT
+			1 sous : O O 
+			5 sous : O O O O O 
+			10 sous : O O 
+			25 sous : 
+		ORDINATEUR
+			1 sous : 
+			5 sous : O 
+			10 sous : 
+			25 sous : O 
+		Faites votre choix
+		   ----------------------------
+			1 : piece de 1 sous
+			2 : piece de 5 sous
+			3 : piece de 10 sous
+			4 : piece de 25 sous
+			5 : Abandonner la partie
+		Entrez votre choix : 
+		1
+		JOUEUR
+			1 sous : O O O O O 
+			5 sous : 
+			10 sous : O O 
+			25 sous : O 
+		POT
+			1 sous : 
+			5 sous : O O O O O O 
+			10 sous : O O 
+			25 sous : 
+		ORDINATEUR
+			1 sous : O O O 
+			5 sous : 
+			10 sous : 
+			25 sous : O 
+		Faites votre choix
+		   ----------------------------
+			1 : piece de 1 sous
+			2 : piece de 5 sous
+			3 : piece de 10 sous
+			4 : piece de 25 sous
+			5 : Abandonner la partie
+		Entrez votre choix : 
+		1
+		JOUEUR
+			1 sous : O O O O 
+			5 sous : 
+			10 sous : O O 
+			25 sous : O 
+		POT
+			1 sous : O O 
+			5 sous : O O O O O O 
+			10 sous : O O 
+			25 sous : 
+		ORDINATEUR
+			1 sous : O O 
+			5 sous : 
+			10 sous : 
+			25 sous : O 
+		Faites votre choix
+		   ----------------------------
+			1 : piece de 1 sous
+			2 : piece de 5 sous
+			3 : piece de 10 sous
+			4 : piece de 25 sous
+			5 : Abandonner la partie
+		Entrez votre choix : 
+		1
+		JOUEUR
+			1 sous : O O O 
+			5 sous : 
+			10 sous : O O 
+			25 sous : O 
+		POT
+			1 sous : O O O O 
+			5 sous : O O O O O O 
+			10 sous : O O 
+			25 sous : 
+		ORDINATEUR
+			1 sous : O 
+			5 sous : 
+			10 sous : 
+			25 sous : O 
+		Faites votre choix
+		   ----------------------------
+			1 : piece de 1 sous
+			2 : piece de 5 sous
+			3 : piece de 10 sous
+			4 : piece de 25 sous
+			5 : Abandonner la partie
+		Entrez votre choix : 
+		1
+		JOUEUR
+			1 sous : O O 
+			5 sous : 
+			10 sous : O O 
+			25 sous : O 
+		POT
+			1 sous : O O O O O O 
+			5 sous : O O O O O O 
+			10 sous : O O 
+			25 sous : 
+		ORDINATEUR
+			1 sous : 
+			5 sous : 
+			10 sous : 
+			25 sous : O 
+		Faites votre choix
+		   ----------------------------
+			1 : piece de 1 sous
+			2 : piece de 5 sous
+			3 : piece de 10 sous
+			4 : piece de 25 sous
+			5 : Abandonner la partie
+		Entrez votre choix : 
+		1
+		JOUEUR
+			1 sous : O 
+			5 sous : 
+			10 sous : O O 
+			25 sous : O 
+		POT
+			1 sous : O O O 
+			5 sous : O O O O O O 
+			10 sous : 
+			25 sous : O 
+		ORDINATEUR
+			1 sous : O O O O 
+			5 sous : 
+			10 sous : O O 
+			25 sous : 
+		Faites votre choix
+		   ----------------------------
+			1 : piece de 1 sous
+			2 : piece de 5 sous
+			3 : piece de 10 sous
+			4 : piece de 25 sous
+			5 : Abandonner la partie
+		Entrez votre choix : 
+		1
+		JOUEUR
+			1 sous : 
+			5 sous : 
+			10 sous : O O 
+			25 sous : O 
+		POT
+			1 sous : O O O O O 
+			5 sous : O O O O O O 
+			10 sous : 
+			25 sous : O 
+		ORDINATEUR
+			1 sous : O O O 
+			5 sous : 
+			10 sous : O O 
+			25 sous : 
+		Faites votre choix
+		   ----------------------------
+			1 : piece de 1 sous
+			2 : piece de 5 sous
+			3 : piece de 10 sous
+			4 : piece de 25 sous
+			5 : Abandonner la partie
+		Entrez votre choix : 
+		3
+		JOUEUR
+			1 sous : O O O O 
+			5 sous : O 
+			10 sous : O 
+			25 sous : O 
+		POT
+			1 sous : O O 
+			5 sous : O O O O O 
+			10 sous : O 
+			25 sous : O 
+		ORDINATEUR
+			1 sous : O O 
+			5 sous : 
+			10 sous : O O 
+			25 sous : 
+		Faites votre choix
+		   ----------------------------
+			1 : piece de 1 sous
+			2 : piece de 5 sous
+			3 : piece de 10 sous
+			4 : piece de 25 sous
+			5 : Abandonner la partie
+		Entrez votre choix : 
+		1
+		JOUEUR
+			1 sous : O O O 
+			5 sous : O 
+			10 sous : O 
+			25 sous : O 
+		POT
+			1 sous : O O O O 
+			5 sous : O O O O O 
+			10 sous : O 
+			25 sous : O 
+		ORDINATEUR
+			1 sous : O 
+			5 sous : 
+			10 sous : O O 
+			25 sous : 
+		Faites votre choix
+		   ----------------------------
+			1 : piece de 1 sous
+			2 : piece de 5 sous
+			3 : piece de 10 sous
+			4 : piece de 25 sous
+			5 : Abandonner la partie
+		Entrez votre choix : 
+		1
+		JOUEUR
+			1 sous : O O 
+			5 sous : O 
+			10 sous : O 
+			25 sous : O 
+		POT
+			1 sous : O O O O O O 
+			5 sous : O O O O O 
+			10 sous : O 
+			25 sous : O 
+		ORDINATEUR
+			1 sous : 
+			5 sous : 
+			10 sous : O O 
+			25 sous : 
+		Faites votre choix
+		   ----------------------------
+			1 : piece de 1 sous
+			2 : piece de 5 sous
+			3 : piece de 10 sous
+			4 : piece de 25 sous
+			5 : Abandonner la partie
+		Entrez votre choix : 
+		1
+		JOUEUR
+			1 sous : O 
+			5 sous : O 
+			10 sous : O 
+			25 sous : O 
+		POT
+			1 sous : O O O 
+			5 sous : O O O O 
+			10 sous : O O 
+			25 sous : O 
+		ORDINATEUR
+			1 sous : O O O O 
+			5 sous : O 
+			10 sous : O 
+			25 sous : 
+		Faites votre choix
+		   ----------------------------
+			1 : piece de 1 sous
+			2 : piece de 5 sous
+			3 : piece de 10 sous
+			4 : piece de 25 sous
+			5 : Abandonner la partie
+		Entrez votre choix : 
+		1
+		JOUEUR
+			1 sous : 
+			5 sous : O 
+			10 sous : O 
+			25 sous : O 
+		POT
+			1 sous : O O O O O 
+			5 sous : O O O O 
+			10 sous : O O 
+			25 sous : O 
+		ORDINATEUR
+			1 sous : O O O 
+			5 sous : O 
+			10 sous : O 
+			25 sous : 
+		Faites votre choix
+		   ----------------------------
+			1 : piece de 1 sous
+			2 : piece de 5 sous
+			3 : piece de 10 sous
+			4 : piece de 25 sous
+			5 : Abandonner la partie
+		Entrez votre choix : 
+		2
+		JOUEUR
+			1 sous : O O O O 
+			5 sous : 
+			10 sous : O 
+			25 sous : O 
+		POT
+			1 sous : O O 
+			5 sous : O O O O O 
+			10 sous : O O 
+			25 sous : O 
+		ORDINATEUR
+			1 sous : O O 
+			5 sous : O 
+			10 sous : O 
+			25 sous : 
+		Faites votre choix
+		   ----------------------------
+			1 : piece de 1 sous
+			2 : piece de 5 sous
+			3 : piece de 10 sous
+			4 : piece de 25 sous
+			5 : Abandonner la partie
+		Entrez votre choix : 
+		1
+		JOUEUR
+			1 sous : O O O 
+			5 sous : 
+			10 sous : O 
+			25 sous : O 
+		POT
+			1 sous : O O O O 
+			5 sous : O O O O O 
+			10 sous : O O 
+			25 sous : O 
+		ORDINATEUR
+			1 sous : O 
+			5 sous : O 
+			10 sous : O 
+			25 sous : 
+		Faites votre choix
+		   ----------------------------
+			1 : piece de 1 sous
+			2 : piece de 5 sous
+			3 : piece de 10 sous
+			4 : piece de 25 sous
+			5 : Abandonner la partie
+		Entrez votre choix : 
+		1
+		JOUEUR
+			1 sous : O O 
+			5 sous : 
+			10 sous : O 
+			25 sous : O 
+		POT
+			1 sous : O O O O O O 
+			5 sous : O O O O O 
+			10 sous : O O 
+			25 sous : O 
+		ORDINATEUR
+			1 sous : 
+			5 sous : O 
+			10 sous : O 
+			25 sous : 
+		Faites votre choix
+		   ----------------------------
+			1 : piece de 1 sous
+			2 : piece de 5 sous
+			3 : piece de 10 sous
+			4 : piece de 25 sous
+			5 : Abandonner la partie
+		Entrez votre choix : 
+		3
+		JOUEUR
+			1 sous : O O O O O O 
+			5 sous : O 
+			10 sous : 
+			25 sous : O 
+		POT
+			1 sous : 
+			5 sous : O O O O O 
+			10 sous : O O O 
+			25 sous : O 
+		ORDINATEUR
+			1 sous : O O 
+			5 sous : 
+			10 sous : O 
+			25 sous : 
+		Faites votre choix
+		   ----------------------------
+			1 : piece de 1 sous
+			2 : piece de 5 sous
+			3 : piece de 10 sous
+			4 : piece de 25 sous
+			5 : Abandonner la partie
+		Entrez votre choix : 
+		1
+		JOUEUR
+			1 sous : O O O O O 
+			5 sous : O 
+			10 sous : 
+			25 sous : O 
+		POT
+			1 sous : O O 
+			5 sous : O O O O O 
+			10 sous : O O O 
+			25 sous : O 
+		ORDINATEUR
+			1 sous : O 
+			5 sous : 
+			10 sous : O 
+			25 sous : 
+		Faites votre choix
+		   ----------------------------
+			1 : piece de 1 sous
+			2 : piece de 5 sous
+			3 : piece de 10 sous
+			4 : piece de 25 sous
+			5 : Abandonner la partie
+		Entrez votre choix : 
+		1
+		JOUEUR
+			1 sous : O O O O 
+			5 sous : O 
+			10 sous : 
+			25 sous : O 
+		POT
+			1 sous : O O O O 
+			5 sous : O O O O O 
+			10 sous : O O O 
+			25 sous : O 
+		ORDINATEUR
+			1 sous : 
+			5 sous : 
+			10 sous : O 
+			25 sous : 
+		Faites votre choix
+		   ----------------------------
+			1 : piece de 1 sous
+			2 : piece de 5 sous
+			3 : piece de 10 sous
+			4 : piece de 25 sous
+			5 : Abandonner la partie
+		Entrez votre choix : 
+		1
+		JOUEUR
+			1 sous : O O O 
+			5 sous : O 
+			10 sous : 
+			25 sous : O 
+		POT
+			1 sous : O 
+			5 sous : O O O O 
+			10 sous : O O O O 
+			25 sous : O 
+		ORDINATEUR
+			1 sous : O O O O 
+			5 sous : O 
+			10 sous : 
+			25 sous : 
+		Faites votre choix
+		   ----------------------------
+			1 : piece de 1 sous
+			2 : piece de 5 sous
+			3 : piece de 10 sous
+			4 : piece de 25 sous
+			5 : Abandonner la partie
+		Entrez votre choix : 
+		1
+		JOUEUR
+			1 sous : O O 
+			5 sous : O 
+			10 sous : 
+			25 sous : O 
+		POT
+			1 sous : O O O 
+			5 sous : O O O O 
+			10 sous : O O O O 
+			25 sous : O 
+		ORDINATEUR
+			1 sous : O O O 
+			5 sous : O 
+			10 sous : 
+			25 sous : 
+		Faites votre choix
+		   ----------------------------
+			1 : piece de 1 sous
+			2 : piece de 5 sous
+			3 : piece de 10 sous
+			4 : piece de 25 sous
+			5 : Abandonner la partie
+		Entrez votre choix : 
+		1
+		JOUEUR
+			1 sous : O 
+			5 sous : O 
+			10 sous : 
+			25 sous : O 
+		POT
+			1 sous : O O O O O 
+			5 sous : O O O O 
+			10 sous : O O O O 
+			25 sous : O 
+		ORDINATEUR
+			1 sous : O O 
+			5 sous : O 
+			10 sous : 
+			25 sous : 
+		Faites votre choix
+		   ----------------------------
+			1 : piece de 1 sous
+			2 : piece de 5 sous
+			3 : piece de 10 sous
+			4 : piece de 25 sous
+			5 : Abandonner la partie
+		Entrez votre choix : 
+		1
+		JOUEUR
+			1 sous : 
+			5 sous : O 
+			10 sous : 
+			25 sous : O 
+		POT
+			1 sous : O O O O O O O 
+			5 sous : O O O O 
+			10 sous : O O O O 
+			25 sous : O 
+		ORDINATEUR
+			1 sous : O 
+			5 sous : O 
+			10 sous : 
+			25 sous : 
+		Faites votre choix
+		   ----------------------------
+			1 : piece de 1 sous
+			2 : piece de 5 sous
+			3 : piece de 10 sous
+			4 : piece de 25 sous
+			5 : Abandonner la partie
+		Entrez votre choix : 
+		2
+		JOUEUR
+			1 sous : O O O O 
+			5 sous : 
+			10 sous : 
+			25 sous : O 
+		POT
+			1 sous : O O O O 
+			5 sous : O O O O O 
+			10 sous : O O O O 
+			25 sous : O 
+		ORDINATEUR
+			1 sous : 
+			5 sous : O 
+			10 sous : 
+			25 sous : 
+		Faites votre choix
+		   ----------------------------
+			1 : piece de 1 sous
+			2 : piece de 5 sous
+			3 : piece de 10 sous
+			4 : piece de 25 sous
+			5 : Abandonner la partie
+		Entrez votre choix : 
+		4
+		JOUEUR
+			1 sous : O O O O O O O O 
+			5 sous : 
+			10 sous : O O 
+			25 sous : 
+		POT
+			1 sous : 
+			5 sous : O O O O O O 
+			10 sous : O O 
+			25 sous : O O 
+		ORDINATEUR
+			1 sous : 
+			5 sous : 
+			10 sous : 
+			25 sous : 
+		Vous avez gagné !
+		Le gagnant remporte 100 sous !
